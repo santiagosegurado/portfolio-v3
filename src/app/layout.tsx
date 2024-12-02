@@ -8,6 +8,7 @@ const firaCode = Fira_Code({
   variable: "--font-fira-code",
   weight: ["400", "300", "500", "700"],
   style: ["normal"],
+  subsets: ["latin-ext"],
 });
 
 export const metadata: Metadata = {
