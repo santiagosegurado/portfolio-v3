@@ -18,3 +18,82 @@
   --accent-border: #1e2d3d;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  scrollbar-width: none; 
+}
+
+body {
+  -ms-overflow-style: none;
+}
+
+.markdown-preview h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.7em;
+}
+
+.markdown-preview h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview p {
+  font-size: 1em;
+  color: var(--secondary-white);
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.markdown-preview blockquote {
+  font-size: 1em;
+  color: var(--secondary-white);
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--secondary-white);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.markdown-preview ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+.markdown-preview li {
+  font-size: 1em;
+  color: var(--secondary-white);
+  font-family: "Open Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview strong {
+  font-weight: bold;
+  color: var(--secondary-white);
+}
