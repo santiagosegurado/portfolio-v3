@@ -24,38 +24,36 @@ const Navbar = () => {
                 path
               )} transition-all duration-200 ease-in`}
             />
-            <li className="w-40 flex justify-center items-center">
-              <button
-                className="w-full h-full flex justify-center items-center cursor-pointer"
-                onClick={() => router.push("/")}
-              >
+            <li
+              className="w-40 flex justify-center items-center"
+              onClick={() => router.push("/")}
+            >
+              <button className="w-full h-full flex justify-center items-center cursor-pointer">
                 <span>_hello</span>
               </button>
             </li>
             <div className="w-[1px] h-16 bg-accentBorder" />
-            <li className="w-40 flex justify-center items-center">
-              <button
-                className="w-full h-full flex justify-center items-center cursor-pointer"
-                onClick={() => router.push("/about-me")}
-              >
+            <li
+              className="w-40 flex justify-center items-center"
+              onClick={() => router.push("/about-me")}
+            >
+              <button className="w-full h-full flex justify-center items-center cursor-pointer">
                 <span>_about-me</span>
               </button>
             </li>
             <div className="w-[1px] h-16 bg-accentBorder" />
-            <li className="w-40 flex justify-center items-center">
-              <button
-                className="w-full h-full flex justify-center items-center cursor-pointer"
-                onClick={() => router.push("/projects")}
-              >
+
+            <li
+              className="w-40 flex justify-center items-center"
+              onClick={() => router.push("/projects")}
+            >
+              <button className="w-full h-full flex justify-center items-center cursor-pointer">
                 <span>_projects</span>
               </button>
             </li>
           </ul>
         </nav>
       </section>
-      <div className="flex items-center border-l border-accentBorder">
-        <span className="pl-5">_contact</span>
-      </div>
     </header>
   );
 };
