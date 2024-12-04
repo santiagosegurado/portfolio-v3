@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { useRouter } from "next/navigation";
+import CloseIcon from "../icons/CloseIcon";
 
 interface ResponsiveNavListProps {
   menuModalToggle: boolean;
@@ -9,6 +10,8 @@ const ResponsiveNavList = ({
   menuModalToggle,
   handleMenuModalToggle,
 }: ResponsiveNavListProps) => {
+  const router = useRouter();
+
   return (
     <div
       className={`absolute w-full bg-primaryBlue flex flex-col justify-between ${
@@ -17,22 +20,31 @@ const ResponsiveNavList = ({
     >
       <div className="flex w-full p-4 justify-end">
         <button onClick={handleMenuModalToggle}>
-          <Image src="/close.svg" alt="close" width={18} height={18} />
+          <CloseIcon className="w-4 h-4 fill-secondaryGray" />
         </button>
       </div>
       <nav className="flex flex-col items-center h-[calc(100vh-160px)]">
         <ul className="flex flex-col items-center text-secondaryWhite w-full">
-          <li className="p-4 border-b border-accentBorder w-full flex">
+          <li
+            className="p-4 border-b border-accentBorder w-full flex"
+            onClick={() => {
+              router.push("/");
+              handleMenuModalToggle();
+            }}
+          >
             <span>_hello</span>
           </li>
-          <li className="p-4 border-b border-accentBorder w-full flex">
+          <li className="p-4 border-b border-accentBorder w-full flex" onClick={() => {
+              router.push("/about-me");
+              handleMenuModalToggle();
+            }}>
             <span>_about-me</span>
           </li>
-          <li className="p-4 border-b border-accentBorder w-full flex">
+          <li className="p-4 border-b border-accentBorder w-full flex" onClick={() => {
+              router.push("/projects");
+              handleMenuModalToggle();
+            }}>
             <span>_projects</span>
-          </li>
-          <li className="p-4 border-b border-accentBorder w-full flex">
-            <span>_contact</span>
           </li>
         </ul>
       </nav>
