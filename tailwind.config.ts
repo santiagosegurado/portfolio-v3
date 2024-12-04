@@ -21,6 +21,7 @@ export default {
         accentPeach: "var(--accent-peach)",
         accentViolet: "var(--accent-violet)",
         accentBorder: "var(--accent-border)",
+        accentOrange: "var(--accent-orange)",
       },
     },
   },
