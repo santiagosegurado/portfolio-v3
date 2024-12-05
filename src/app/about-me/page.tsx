@@ -29,41 +29,64 @@ const AboutMe = () => {
 
   const markdownExperience = `# Experience
 
-### Software Developer at XYZ Company (2021 - Present)
+### Bigger [B2B], Australia (remote) (Nov 2023 - Present) — Software Developer
 **Responsibilities:**
-- Designed and developed intuitive user interfaces and robust backend systems.
-- Optimized processes and significantly enhanced user experience.
-- Contributed to a wide range of projects for international companies.
-- Excelled in both frontend and backend development.
-- Ensured seamless integration between frontend and backend systems.
+- Design and develop customized solutions to optimize business processes.
+- Implement intuitive user interfaces that improved interaction with enterprise business systems.
+- Integrate own and third-party services and APIs to expand the functionality of the platforms.
+- Participate in the planning and prioritization of projects in collaboration with multidisciplinary teams using agile methodologies.
 
 **Achievements:**
-- Successfully launched a new user interface that increased user engagement by 30%.
-- Implemented a backend system that reduced processing time by 40%.
+- Development of an automated tool that reduced recurring manual tasks, increasing customer productivity.
+- Recognition for timely delivery of high-quality projects, exceeding client expectations.
 
-### Full Stack Developer at ABC Corporation (2019 - 2021)
+### Webcat [SaaS B2B], Colombia (remote) (Mar 2023 - Oct 2023) — Low Code Developer
 **Responsibilities:**
-- Developed full-stack web applications using React and Node.js.
-- Integrated APIs and external services.
-- Improved application performance and security.
-- Collaborated with multidisciplinary teams to deliver high-quality solutions.
-- Worked with agile methodologies to ensure timely delivery.
+- Develop solutions using low-code platforms to accelerate the delivery of functionalities.
+- Configure and customize modules according to the specific needs of clients.
+- Provide technical support and resolve incidents related to the use of the product.
 
 **Achievements:**
-- Led a project that improved application performance by 25%.
-- Developed a security feature that reduced vulnerabilities by 50%.
+- Significant reduction in project delivery times for clients, achieving faster implementation of solutions compared to initial estimates.
+- Consistent customer satisfaction due to proactive and efficient support, obtaining positive feedback for the speed and quality of responses.
 `;
 
   const typescriptContactMe = `
-
 const contactMe = {
   name: "Santiago Segurado",
   email: "santiagosegurado@icloud.com",
   phone: "+541127201927",
-  linkedin: "linkedin.com/in/johndoe",
-  github: "github.com/johndoe",
+  linkedin: "linkedin.com/in/santiago-segurado-frontend/",
+  github: "github.com/santiagosegurado",
 };
   `;
+
+  const javascriptSkills = `
+const languagesAndFrameworks = [
+  "HTML",
+  "CSS",
+  "Tailwind CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "Node.js",
+  "Next.js",
+  "Nest.js",
+];
+
+const toolsAndTechnologies = [
+  "Git",
+  "GitHub",
+  "VS Code",
+  "Postman",
+  "MongoDB",
+  "MySQL",
+  "PostgreSQL",
+  "Firebase",
+  "AWS"
+  "Docker",
+];
+`;
 
   const [tab, setTab] = useState({
     activeTab: "bio.md",
@@ -87,7 +110,7 @@ const contactMe = {
           <FolderIcon className="w-4 h-4 fill-secondaryGray" />
           <span>personal-info</span>
         </div>
-        <div className={`flex-col ${openFolder ? "flex" : "hidden"}`}>
+        <div className={`flex-col overflow-scroll ${openFolder ? "flex" : "hidden"}`}>
           <div
             className={`flex flex-row gap-1 items-center ${
               tab.activeTab === "bio.md" && "bg-accentBorder"
@@ -125,11 +148,25 @@ const contactMe = {
             }
           >
             <JSIcon className="w-4 h-4 fill-[#FFFF00]" />
-            <span>contact-me.ts</span>
+            <span>contact-me.js</span>
+          </div>
+          <div
+            className={`flex flex-row gap-1 items-center ${
+              tab.activeTab === "skills.js" && "bg-accentBorder"
+            } p-2 pl-10 cursor-pointer`}
+            onClick={() =>
+              setTab({
+                activeTab: "skills.js",
+                content: javascriptSkills,
+              })
+            }
+          >
+            <JSIcon className="w-4 h-4 fill-[#FFFF00]" />
+            <span>skills.js</span>
           </div>
         </div>
       </aside>
-      <section className="flex flex-col h-full w-full overflow-y-scroll">
+      <section className="flex flex-col h-full w-full">
         <div className="text-secondaryGray border-b border-accentBorder flex-row hidden md:flex">
           {tab.activeTab !== "" && (
             <div className="flex flex-row w-full">
@@ -137,9 +174,11 @@ const contactMe = {
                 <div className="flex flex-row gap-3">
                   <div className="flex flex-row gap-10 p-3 items-center">
                     <div className="flex flex-row gap-1 items-center">
-                      {tab.activeTab !== "contact-me.js" ? (
+                      {tab.activeTab.includes(".md") ? (
                         <>
-                          <span className="text-secondaryWhite">{tab.activeTab} preview</span>
+                          <span className="text-secondaryWhite">
+                            {tab.activeTab} preview
+                          </span>
                         </>
                       ) : (
                         <>
@@ -156,13 +195,13 @@ const contactMe = {
                   <div className="w-[1px] h-full bg-accentBorder"></div>
                 </div>
               </div>
-              {tab.activeTab !== "contact-me.js" && (
+              {tab.activeTab.includes(".md") && (
                 <div className="flex w-3/6">
                   <div className="w-[1px] h-full bg-accentBorder"></div>
                   <div className="flex flex-row gap-3">
                     <div className="flex flex-row gap-10 p-3 items-center">
                       <div className="flex flex-row gap-1 items-center">
-                        {tab.activeTab !== "contact-me.js" ? (
+                        {tab.activeTab.includes(".md") ? (
                           <>
                             <FileIcon className="w-4 h-4 fill-[#81A1C1]" />
                             <span>{tab.activeTab}</span>
@@ -188,7 +227,7 @@ const contactMe = {
         </div>
         {tab.activeTab !== "" ? (
           <div className="text-secondaryWhite flex flex-row w-full md:h-full h-fit">
-            {tab.activeTab !== "contact-me.js" ? (
+            {tab.activeTab.includes(".md") ? (
               <>
                 <div className="md:w-3/6 w-full px-7 py-4 overflow-y-scroll pb-40">
                   <ReactMarkdown
