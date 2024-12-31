@@ -5,7 +5,7 @@ import ProjectCard from "../components/projects/ProjectCard";
 import ProjectsSidebar from "../components/projects/ProjectsSidebar";
 
 const Projects = () => {
-  const languages = ["React", "React Native", "Next.js"];
+  const languages = ["React.js", "React Native", "Next.js"];
 
   const projects = [
     {
