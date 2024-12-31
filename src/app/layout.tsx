@@ -21,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="w-full h-screen overflow-hidden">
+    <html lang="en" className="w-full h-screen lg:overflow-hidden">
       <body
-        className={`${firaCode.variable} antialiased bg-background w-full h-screen overflow-hidden`}
+        className={`${firaCode.variable} antialiased bg-background w-full h-screen`}
       >
         <Wrapper>{children}</Wrapper>
       </body>

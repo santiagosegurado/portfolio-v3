@@ -70,7 +70,7 @@ export default function Home() {
           </div>
           <div className="flex flex-row gap-3">
             <Button style="primary">
-              <GitHubIcon className="w-5 h-5"/>
+              <GitHubIcon className="w-5 h-5" />
               <Link
                 href={"https://github.com/santiagosegurado"}
                 target="_blank"
