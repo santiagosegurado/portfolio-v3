@@ -1,5 +1,4 @@
 "use client";
-import ArrowIcon from "../components/icons/ArrowIcon";
 import FileIcon from "../components/icons/FileIcon";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -10,9 +9,9 @@ import "highlight.js/styles/atom-one-dark.css";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import CloseIcon from "../components/icons/CloseIcon";
-import FolderIcon from "../components/icons/FolderIcon";
 import { useState } from "react";
 import JSIcon from "../components/icons/JSIcon";
+import AboutMeSidebar from "../components/about-me/AboutMeSidebar";
 
 const AboutMe = () => {
   const customStyle = {
@@ -93,80 +92,17 @@ const toolsAndTechnologies = [
     content: markdownBio,
   });
 
-  const [openFolder, setOpenFolder] = useState(true);
-
   return (
     <main className="h-full flex flex-col md:flex-row">
-      <aside className="md:h-full h-fit md:max-w-60 w-full md:border-r md:border-accentBorder flex flex-col text-secondaryWhite overflow-hidden">
-        <div
-          className="text-secondaryWhite flex flex-row items-center gap-1 p-3 cursor-pointer"
-          onClick={() => setOpenFolder(!openFolder)}
-        >
-          <ArrowIcon
-            className={`w-5 h-5 fill-secondaryWhite transition-transform duration-300 ${
-              openFolder ? "rotate-0" : "-rotate-90"
-            }`}
-          />
-          <FolderIcon className="w-4 h-4 fill-secondaryGray" />
-          <span>personal-info</span>
-        </div>
-        <div className={`flex-col overflow-scroll ${openFolder ? "flex" : "hidden"}`}>
-          <div
-            className={`flex flex-row gap-1 items-center ${
-              tab.activeTab === "bio.md" && "bg-accentBorder"
-            } p-2 pl-10 cursor-pointer`}
-            onClick={() =>
-              setTab({ activeTab: "bio.md", content: markdownBio })
-            }
-          >
-            <FileIcon className="w-4 h-4 fill-[#81A1C1]" />
-            <span>bio.md</span>
-          </div>
-          <div
-            className={`flex flex-row gap-1 items-center ${
-              tab.activeTab === "experience.md" && "bg-accentBorder"
-            } p-2 pl-10 cursor-pointer`}
-            onClick={() =>
-              setTab({
-                activeTab: "experience.md",
-                content: markdownExperience,
-              })
-            }
-          >
-            <FileIcon className="w-4 h-4 fill-[#81A1C1]" />
-            <span>experience.md</span>
-          </div>
-          <div
-            className={`flex flex-row gap-1 items-center ${
-              tab.activeTab === "contact-me.js" && "bg-accentBorder"
-            } p-2 pl-10 cursor-pointer`}
-            onClick={() =>
-              setTab({
-                activeTab: "contact-me.js",
-                content: typescriptContactMe,
-              })
-            }
-          >
-            <JSIcon className="w-4 h-4 fill-[#FFFF00]" />
-            <span>contact-me.js</span>
-          </div>
-          <div
-            className={`flex flex-row gap-1 items-center ${
-              tab.activeTab === "skills.js" && "bg-accentBorder"
-            } p-2 pl-10 cursor-pointer`}
-            onClick={() =>
-              setTab({
-                activeTab: "skills.js",
-                content: javascriptSkills,
-              })
-            }
-          >
-            <JSIcon className="w-4 h-4 fill-[#FFFF00]" />
-            <span>skills.js</span>
-          </div>
-        </div>
-      </aside>
-      <section className="flex flex-col h-full w-full">
+      <AboutMeSidebar
+        markdownBio={markdownBio}
+        markdownExperience={markdownExperience}
+        typescriptContactMe={typescriptContactMe}
+        javascriptSkills={javascriptSkills}
+        tab={tab}
+        setTab={setTab}
+      />
+      <section className="flex flex-col h-full w-full overflow-y-scroll lg:overflow-hidden">
         <div className="text-secondaryGray border-b border-accentBorder flex-row hidden md:flex">
           {tab.activeTab !== "" && (
             <div className="flex flex-row w-full">
